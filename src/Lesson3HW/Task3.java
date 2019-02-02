@@ -3,11 +3,14 @@ package Lesson3HW;
 import java.util.Scanner;
 
 public class Task3 {
+
     public static void main(String[] args) {
         System.out.println("Please enter amount of days: ");
         int numberOfDays = enterValue();
         int precipitationSum = 0;
         int precipitationMax = 0;
+        int precipitationAverage = 0;
+
         if (numberOfDays != 0) {
             for (int i = 0; i < numberOfDays; i++) {
                 System.out.println("Please enter precipitation amount for " + " day " + (i + 1) + ":");
@@ -15,16 +18,16 @@ public class Task3 {
                 precipitationSum += precipitation;
                 precipitationMax = getMax(precipitationMax, precipitation);
             }
-            int precipitationAverage = getAverage(numberOfDays, precipitationSum);
-            System.out.println("\nAmount of days: " + numberOfDays + ";" +
-                    "\nPrecipitation in total during " + numberOfDays + " days: " + precipitationSum + ";" +
-                    "\nAverage precipitation per day: " + precipitationAverage + ";" +
-                    "\nMaximum precipitation during " + numberOfDays + " days: " + precipitationMax + ".");
+            precipitationAverage = getAverage(numberOfDays, precipitationSum);
+            System.out.println("\nAmount of days: " + numberOfDays + ";"
+                    + "\nPrecipitation in total during " + numberOfDays + " days: " + precipitationSum + ";"
+                    + "\nAverage precipitation per day: " + precipitationAverage + ";"
+                    + "\nMaximum precipitation during " + numberOfDays + " days: " + precipitationMax + ".");
         } else {
-            System.out.println("\nAmount of days: " + numberOfDays + ";" +
-                    "\nPrecipitation in total: " + numberOfDays + ";" +
-                    "\nAverage precipitation: " + numberOfDays + ";" +
-                    "\nMaximum precipitation: " + numberOfDays + ".");
+            System.out.println("\nAmount of days: " + numberOfDays + ";"
+                    + "\nPrecipitation in total: " + precipitationSum + ";"
+                    + "\nAverage precipitation: " + precipitationAverage + ";"
+                    + "\nMaximum precipitation: " + precipitationMax + ".");
         }
     }
 

@@ -3,12 +3,13 @@ package Lesson3HW;
 import java.util.Scanner;
 
 public class Task2 {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter integer value: ");
         int value = enterValue();
         int n_2 = 0;
         int n_1 = 1;
+
         if (value == 0) {
             System.out.println("F(n): " + n_2);
         } else {
@@ -38,9 +39,9 @@ public class Task2 {
     private static int enterValue() {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        if (x < 0) {
+        while (x < 0) {
             System.out.println("Cannot be negative. Please enter again: ");
-            x = enterValue();
+            x = scanner.nextInt();
         }
         return x;
     }
